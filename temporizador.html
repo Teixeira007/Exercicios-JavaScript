@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var intervalo
+        var numero = 0
+
+        function mudarCor(){
+            let h = document.getElementsByTagName('h1')[0]
+            h.style.color = "red"
+        }
+
+        function iniciar(){
+            intervalo = setInterval(cronometro,1500) //setInterval - temporizador que roda repetidamente em um intervalo de tempo
+        }
+
+        function parar(){
+            clearInterval(intervalo)
+        }
+
+        function cronometro(){
+            let h = document.getElementsByTagName("h1")[0]
+            h.innerHTML += " " + numero
+            numero++
+        }
+
+        function mudarTexto(){
+            let h = document.getElementsByTagName('h1')[0]
+            h.innerHTML = "Titulo Novo"
+
+            setTimeout(mudarCor, 1000) //setTimeout -temporizador que só roda uma vez, (função, tempo em milesegundos
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <input type="submit" value="Iniciar" onclick="iniciar()">
+    <input type="submit" value="Parar" onclick="parar()">
+    <input type="submit" onclick="mudarTexto()" value="mudar">
+</body>
+</html>

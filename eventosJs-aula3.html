@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function loaded(){
+            let t = document.getElementById('titulo')
+            t.onclick = mudarText //Usando o evento onclick diretamente no Js
+
+            let f = document.getElementById('subtitulo')
+            f.addEventListener('click', mudarText) //addEventListener passando 2 argumentos o evento e a função
+        
+
+            function mudarText(){
+                this.innerHTML = "Mudando texto"
+            }
+        }
+    </script>
+
+
+
+
+
+</head>
+<body onload= "loaded()">
+    
+
+    <h1 id="titulo">Teste</h1>
+    <h2 id="subtitulo">Teste2</h2>
+
+
+</body>
+</html>

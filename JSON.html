@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //Criando um "objeto" aluno
+        let aluno = {
+            nome: 'Joao',
+            nota: 8.7
+        }
+        console.log(aluno)
+
+        let alunostring = JSON.stringify(aluno) //Transformando esse "objeto" em uma "string"
+        console.log(alunostring)
+
+        let stringAluno = '{"nome":"Marcos","nota":8.9}' //Criando uma "string"
+        console.log(stringAluno)
+
+        let alunoObject = JSON.parse(stringAluno) //Transformando essa "string" em "Objeto"
+        console.log(alunoObject)
+
+
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

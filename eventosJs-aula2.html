@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            background-color: blue;
+            display: inline-block;
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        function Over(elemento){
+            elemento.style.backgroundColor = "red"
+        }
+        function Out(elemento){
+            elemento.style.backgroundColor = "blue"
+        }
+    </script>
+
+
+</head>
+<body onload="console.log('Página carregada')">
+    
+    <!-- onmouseover - evento realizado quando o mouse está sobre o elemento -->
+    <!-- onmouseout - evento realizado quando o mouse é retirado do elemento -->
+    <div onmouseover="Over(this)" onmouseout="Out(this)">Click aqui</div>
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 650px;
+            height: 360px;
+            position: relative;
+        }
+        .video{
+            width: 100%;
+            height: 100%;
+        }
+        .controle{
+            /* background-color: red; */
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            text-align: center;
+            display: none;
+        }
+        .bnt{
+            /* font-size: 40px; */
+            position: relative;
+            width: 30px;
+            height: 30px;
+            top: 100%;
+            transform: translateY(-120%);
+            padding: 10px;
+            margin: 0 20px 0px 0px;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50%;
+        }
+        .controle i{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" onmouseout="ocultar()" onmouseover="mostrar()">
+        <video id="video1" class="video" src="video/02 - Estrutura Básica.mp4"></video>
+        <div id="controle" class="controle">
+            <i onclick="retroceder()" class="bnt fa fa-backward"></i>
+            <i onclick="avancar()" class="bnt fa fa-forward"></i>
+            <i onclick="aumentar_vel()" class="bnt fa fa-plus"></i>
+            <i onclick="diminuir_vel()" class="bnt fa fa fa-minus"></i>
+            <i onclick="play()" class="bnt fa fa-play"></i>
+            <i onclick="stop()" class="bnt fa fa-stop"></i>
+        </div>
+    </div>
+    <!-- 
+        currentTime - é o tempo do vídeo
+        playbackRate - é a velociade do vídeo
+        play() - é uma função para iniciar o vídeo
+        pause() é uma função para pausar o vídeo
+     -->
+
+    <script>
+        let video = document.getElementById('video1')
+
+        function retroceder(){
+            video.currentTime -= 15
+        }
+        function avancar(){
+            video.currentTime += 15
+        }
+        function aumentar_vel(){
+            video.playbackRate += 0.5
+        }
+        function diminuir_vel(){
+            video.playbackRate -= 0.5
+        }
+        function play(){
+            video.play()
+        }
+        function stop(){
+            video.pause()
+            video.currentTime = 0
+        }
+        function mostrar(){
+            let controle = document.getElementById("controle")
+            controle.style.display = "block"
+        }
+        function ocultar(){
+            let controle = document.getElementById('controle')
+            controle.style.display = "none"
+        }
+        
+    </script>
+</body>
+</html>

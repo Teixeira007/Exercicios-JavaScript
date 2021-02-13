@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tela{
+            background-color: bisque;
+        }
+        #tela1{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="tela" width="500" height="500"></canvas>
+    <canvas id="tela1" width="500" height="500"></canvas>
+
+    <script>
+        tela = document.getElementById('tela')
+        ctx = tela.getContext('2d') //pegando o contéudo da tela em 2d
+        ctx.moveTo(0,0) //mover a ponta do lápis para o local desejado
+        ctx.lineTo(255,255) // fazer uma linha do ponto inicial até este ponto
+        ctx.lineTo(500,0)
+        ctx.lineWidth = 3 //tamanho da linha
+        ctx.strokeStyle = "blue" // definir cor do desenho
+        ctx.stroke() //método para desenhar a linha
+
+
+        tela1 = document.getElementById("tela1")
+        ctx1 = tela1.getContext('2d')
+        
+        ctx1.beginPath() //Começa um caminho
+        ctx1.fillStyle = 'red' //cor do retangulo
+        ctx1.fillRect(10,10,200,100) //cria um retangulo preenchido(posiçãoX, posiçãoY, largura, altura)
+
+        ctx1.beginPath()
+        ctx1.strokeStyle = "blue"
+        ctx1.lineWidth = 3
+        ctx1.strokeRect(10, 150, 200, 100) //cria um retangulo com stroke este não é preenchido
+
+        ctx1.beginPath()
+        ctx1.rect(10,300,200,100) //cria um retangulo
+        ctx1.fillStyle = 'red' //cor do preenchimento
+        ctx1.strokeStyle = 'blue' //cor da borda
+        ctx1.lineWidth = 5 //espesura da borda
+        ctx1.fill() //chama o preechimento
+        ctx1.stroke() //chama a borda
+        ctx1.clearRect(30,310, 20,20) //Limpa um pedaço do seu retangulo(posX, posY, largura, altura)
+
+        ctx1.beginPath()
+        ctx1.strokeStyle = "red"
+        ctx1.lineWidth = 3
+        ctx1.fillStyle = 'green' //cor do preenchimento
+        ctx1.moveTo(10,450)
+        ctx1.lineTo(500,450)
+        ctx1.lineTo(490, 470)
+        ctx1.closePath() //fecha o caminha 
+        ctx1.fill() //chama o preenchimento
+        ctx1.stroke()
+
+    </script>
+</body>
+</html>

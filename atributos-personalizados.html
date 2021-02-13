@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <ul id="lista" data-num="5">
+    
+    <ul>
+
+
+    <script>
+        lista = document.getElementById("lista")
+
+        lista.setAttribute("data-chave", '1') // setAttribute - cria um novo atributo para o elemento (nome, valor)
+        // lista.dataset.chave = 2 //Cria atributo data-chave e manda um valor
+        // let numero = parseInt(lista.getAttribute("num")) //getAttribute - pega o atributo passado como parametro
+        let numero = parseInt(lista.dataset.num) //pega atributos criados que tem data- no nome
+        
+
+        let conteudo = ""
+
+        for(let i=0; i<numero;i++){
+
+            conteudo += "<li>" +i+ "</li>"
+
+        }
+
+        lista.innerHTML = conteudo
+
+    </script>
+</body>
+</html>

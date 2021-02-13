@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tela{
+            background-color: bisque;
+            width: 500px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .quadrado{
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <div class="tela">
+        <div class="quadrado"></div>
+    </div>
+
+
+
+    <script>
+        xInicial = 0
+        yInicial = 0
+        let jogador = document.getElementsByClassName('quadrado')[0]
+        
+        function moveJogador(x,y){
+
+            let posX = x + "px"
+            let posY = y + "px"
+            jogador.style.top = posY
+            jogador.style.left = posX
+
+        }
+
+        setInterval(function(){
+
+            moveJogador(xInicial++, yInicial++)
+            
+        }, 24)
+
+    </script>
+</body>
+</html>

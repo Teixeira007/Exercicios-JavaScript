@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function mudarH1(input){
+            let h1 = document.getElementsByTagName('h1')[0] //seleciona elemento pela tag
+            h1.innerText = input.value // muda valor do h1 pelo que está no input
+        }
+        function mudarh1(input){
+            let h1 = document.getElementsByTagName('h1')[0] //seleciona elemento pela tag
+            h1.innerText = input.value // muda valor do h1 pelo que está no input
+        }
+        function mudarStiloH1(){
+            let h1 = document.getElementsByTagName('h1')[0] //seleciona elemento pela tag
+            h1.style.color = "red" // muda estilo do h1 
+        }
+    </script>
+
+    <style>
+        /* estilo da div */
+        .mudarEstilo{
+            background-color: blue;
+            padding: 20px;
+            margin: 20px 0;
+            width: 50px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- onclick - realiza um evento quando for clicado -->
+    <h1 onclick="console.log('Vc clicou no h1')">Clique aqui</h1> 
+
+    <!-- onchange - realiza um evento após o enter for apertado -->
+    <input type="text" onchange="mudarH1(this)">
+
+    <!-- oninput - realiza um evento automáticamente -->
+    <input type="text" oninput="mudarh1(this)">
+
+    <!-- mudando estilo usando evento onclick e função "mudarStiloH1()" que está no Script -->
+    <div class="mudarEstilo" onclick="mudarStiloH1()">
+        click
+    </div>
+</body>
+</html>
