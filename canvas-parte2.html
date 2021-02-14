@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tela{
+            /* background-color:aqua; */
+            border: 2px solid #eaeaea;
+            /* color:lightskyblue */
+        }
+    </style>
+</head>
+<body>
+    <canvas id='tela' width="800" height="500"></canvas>
+    
+
+
+    <script>
+        //BEGIN PAC-MAN
+        let fim = (1.8 * Math.PI)
+        let inicio = (0.1* Math.PI)
+        let inicioY = (0)
+        let fimY = (2* Math.PI)
+        
+        let tela = document.getElementById('tela')
+        let ctx = tela.getContext('2d') 
+
+        //corpo do pac-man
+        ctx.beginPath()
+        ctx.strokeStyle = 'black'
+        ctx.fillStyle = 'yellow'
+        ctx.arc(240,240,100,inicio,fim )
+        ctx.lineTo(240,240)
+        ctx.lineTo(334,271)
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        
+        ctx.beginPath()
+        ctx.fillStyle = "black"
+        ctx.arc(240,170,15,inicioY,fimY)
+        ctx.fill()
+        ctx.closePath()
+
+        //olho do pac-man
+        ctx.beginPath()
+        ctx.strokeStyle = "black"
+        ctx.fillStyle = 'white'
+        ctx.arc(300, 230, 15, inicioY, fimY)
+        ctx.stroke()
+        ctx.fill()
+        ctx.closePath()
+
+        //tiros do pac-man
+        ctx.beginPath()
+        ctx.strokeStyle = "black"
+        ctx.fillStyle = 'white'
+        ctx.arc(350, 230, 15, inicioY, fimY)
+        ctx.stroke()
+        ctx.fill()
+        ctx.closePath()
+        //CLOSE PAC-MAN
+
+        //BEGIN FANTASMA
+        let inicioF = 1 * Math.PI
+        let fimF = (2 * Math.PI)
+
+        //corpo do fantasma
+
+        ctx.beginPath()
+        ctx.strokeStyle = "red"
+        ctx.fillStyle = "red"
+        ctx.arc(550, 240, 80, inicioF, fimF)
+        ctx.stroke()
+        ctx.fill()
+        ctx.closePath()
+        ctx.lineTo(471, 330)
+        ctx.lineTo(500, 300)
+        ctx.lineTo(529, 330)
+        ctx.lineTo(550, 300)
+        ctx.lineTo(580, 330)
+        ctx.lineTo(600, 300)
+        ctx.lineTo(630, 330)
+        ctx.lineTo(630, 240)
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+
+        //olho 1 do fantasma
+        ctx.beginPath()
+        ctx.strokeStyle = "white"
+        ctx.fillStyle = 'white'
+        ctx.arc(520, 220, 20, inicioY, fimY)
+        ctx.stroke()
+        ctx.fill()
+        ctx.closePath()
+        // olho 2 do fantasma
+        ctx.beginPath()
+        ctx.strokeStyle = "white"
+        ctx.fillStyle = 'white'
+        ctx.arc(570, 220, 20, inicioY, fimY)
+        ctx.stroke()
+        ctx.fill()
+        ctx.closePath()
+        //bola do olho 1
+        ctx.beginPath()
+        ctx.strokeStyle = "blue"
+        ctx.fillStyle = 'blue'
+        ctx.arc(512, 222, 8, inicioY, fimY)
+        ctx.stroke()
+        ctx.fill()
+        ctx.closePath()
+        //bola do olho 2
+        ctx.beginPath()
+        ctx.strokeStyle = "blue"
+        ctx.fillStyle = 'blue'
+        ctx.arc(562, 222, 8, inicioY, fimY)
+        ctx.stroke()
+        ctx.fill()
+        ctx.closePath()
+
+        
+
+    </script>
+</body>
+</html>
