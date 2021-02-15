@@ -14,116 +14,254 @@
     </style>
 </head>
 <body>
-    <canvas id='tela' width="800" height="500"></canvas>
+    <canvas id='tela' width="1400" height="500"></canvas>
     
 
 
     <script>
         //BEGIN PAC-MAN
-        let fim = (1.8 * Math.PI)
-        let inicio = (0.1* Math.PI)
-        let inicioY = (0)
-        let fimY = (2* Math.PI)
         
         let tela = document.getElementById('tela')
         let ctx = tela.getContext('2d') 
 
+        //objeto corpo pac-man
+        let pacman = {
+            x: 240,
+            y: 240,
+            raio: 100, 
+            inicio: (0.1 * Math.PI),
+            fim: (1.8 * Math.PI),
+            centroX: 240,
+            centroY: 240,
+            closeBocaX: 334,
+            closeBocaY: 271,
+        }
+
+        //objeto olho pac-man
+        let olhoPacMan = {
+            x: 240,
+            y: 170,
+            raio: 15,
+            inicioY : 0,
+            fimY: 2*Math.PI,
+        }
+
+        //objeto tiros pac-man
+        let tiros = {
+            x1: 300,
+            y: 230,
+            raio: 15,
+            inicioY: 0,
+            fimY: 2*Math.PI,
+            x2:350,
+        }
+
         //corpo do pac-man
-        ctx.beginPath()
-        ctx.strokeStyle = 'black'
-        ctx.fillStyle = 'yellow'
-        ctx.arc(240,240,100,inicio,fim )
-        ctx.lineTo(240,240)
-        ctx.lineTo(334,271)
-        ctx.fill()
-        ctx.stroke()
-        ctx.closePath()
-        
-        ctx.beginPath()
-        ctx.fillStyle = "black"
-        ctx.arc(240,170,15,inicioY,fimY)
-        ctx.fill()
-        ctx.closePath()
+        function drawPacman(p){
+            
+            ctx.beginPath()
+            ctx.rect(0,0,1400,500)
+            ctx.fillStyle = "white"
+            ctx.fill()
+
+            ctx.beginPath()
+            ctx.strokeStyle = 'black'
+            ctx.fillStyle = 'yellow'
+            ctx.arc(p.x, p.y, p.raio, p.inicio, p.fim )
+            ctx.lineTo(p.centroX, p.centroY)
+            ctx.lineTo(p.closeBocaX, p.closeBocaY)
+            ctx.fill()
+            ctx.stroke()
+            ctx.closePath()
+
+        }
 
         //olho do pac-man
-        ctx.beginPath()
-        ctx.strokeStyle = "black"
-        ctx.fillStyle = 'white'
-        ctx.arc(300, 230, 15, inicioY, fimY)
-        ctx.stroke()
-        ctx.fill()
-        ctx.closePath()
+        function drawOlhoPacMan(o){
+
+            let inicioY = (0)
+            let fimY = (2* Math.PI)
+            ctx.beginPath()
+            ctx.fillStyle = "black"
+            ctx.arc(o.x, o.y, o.raio, o.inicioY, o.fimY)
+            ctx.fill()
+            ctx.closePath()
+
+        }
 
         //tiros do pac-man
-        ctx.beginPath()
-        ctx.strokeStyle = "black"
-        ctx.fillStyle = 'white'
-        ctx.arc(350, 230, 15, inicioY, fimY)
-        ctx.stroke()
-        ctx.fill()
-        ctx.closePath()
-        //CLOSE PAC-MAN
+        function drawTirosPacMan(t){
 
-        //BEGIN FANTASMA
-        let inicioF = 1 * Math.PI
-        let fimF = (2 * Math.PI)
+            //tiro 1 do pac-man
+            ctx.beginPath()
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = 'white'
+            ctx.arc(t.x1, t.y, t.raio, t.inicioY, t.fimY)
+            ctx.stroke()
+            ctx.fill()
+            ctx.closePath()
+
+            //tiros 2 do pac-man
+            ctx.beginPath()
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = 'white'
+            ctx.arc(t.x2, t.y, t.raio, t.inicioY, t.fimY)
+            ctx.stroke()
+            ctx.fill()
+            ctx.closePath()
+        }
+        // //CLOSE PAC-MAN
+
+        // //BEGIN FANTASMA
+
+        //objeto fantasma
+        let fantasma = {
+            x: 550,
+            y: 240,
+            raio: 80,
+            inicioF: 1* Math.PI,
+            fimF: 2 * Math.PI,
+            line1X: 471,
+            line2X: 500,
+            line3X: 529,
+            line4X: 550,
+            line5X: 580,
+            line6X: 600,
+            line7X: 630,
+            line8Y: 240,
+            lineBaixo: 330,
+            lineAlto: 300, 
+        }
+
+        //objeto olho do fantasma
+        let olhoFantasma = {
+            x1: 520,
+            y: 220,
+            raio: 20,
+            inicioY: 0,
+            fimY: 2* Math.PI,
+            x2: 570,
+        }
+
+        //objeto bola dos olhos do fantasma
+        let bolaDoOlho = {
+            x1: 512,
+            y: 222,
+            raio: 8,
+            inicioY: 0,
+            fimY: 2 * Math.PI,
+            x2: 562,
+        }
 
         //corpo do fantasma
+        function drawFantasma(f){
 
-        ctx.beginPath()
-        ctx.strokeStyle = "red"
-        ctx.fillStyle = "red"
-        ctx.arc(550, 240, 80, inicioF, fimF)
-        ctx.stroke()
-        ctx.fill()
-        ctx.closePath()
-        ctx.lineTo(471, 330)
-        ctx.lineTo(500, 300)
-        ctx.lineTo(529, 330)
-        ctx.lineTo(550, 300)
-        ctx.lineTo(580, 330)
-        ctx.lineTo(600, 300)
-        ctx.lineTo(630, 330)
-        ctx.lineTo(630, 240)
-        ctx.fill()
-        ctx.stroke()
-        ctx.closePath()
+            ctx.beginPath()
+            ctx.strokeStyle = "red"
+            ctx.fillStyle = "red"
+            ctx.arc(f.x, f.y, f.raio, f.inicioF, f.fimF)
+            ctx.stroke()
+            ctx.fill()
+            ctx.closePath()
+            ctx.lineTo(f.line1X, f.lineBaixo)
+            ctx.lineTo(f.line2X, f.lineAlto)
+            ctx.lineTo(f.line3X, f.lineBaixo)
+            ctx.lineTo(f.line4X, f.lineAlto)
+            ctx.lineTo(f.line5X, f.lineBaixo)
+            ctx.lineTo(f.line6X, f.lineAlto)
+            ctx.lineTo(f.line7X, f.lineBaixo)
+            ctx.lineTo(f.line7X, f.line8Y)
+            ctx.fill()
+            ctx.stroke()
+            ctx.closePath()
 
-        //olho 1 do fantasma
-        ctx.beginPath()
-        ctx.strokeStyle = "white"
-        ctx.fillStyle = 'white'
-        ctx.arc(520, 220, 20, inicioY, fimY)
-        ctx.stroke()
-        ctx.fill()
-        ctx.closePath()
-        // olho 2 do fantasma
-        ctx.beginPath()
-        ctx.strokeStyle = "white"
-        ctx.fillStyle = 'white'
-        ctx.arc(570, 220, 20, inicioY, fimY)
-        ctx.stroke()
-        ctx.fill()
-        ctx.closePath()
-        //bola do olho 1
-        ctx.beginPath()
-        ctx.strokeStyle = "blue"
-        ctx.fillStyle = 'blue'
-        ctx.arc(512, 222, 8, inicioY, fimY)
-        ctx.stroke()
-        ctx.fill()
-        ctx.closePath()
-        //bola do olho 2
-        ctx.beginPath()
-        ctx.strokeStyle = "blue"
-        ctx.fillStyle = 'blue'
-        ctx.arc(562, 222, 8, inicioY, fimY)
-        ctx.stroke()
-        ctx.fill()
-        ctx.closePath()
-
+        }
         
+        //olhos dos fantasmas
+        function drawOlhoFantasma(o){
+            //olho 1 do fantasma
+            ctx.beginPath()
+            ctx.strokeStyle = "white"
+            ctx.fillStyle = 'white'
+            ctx.arc(o.x1, o.y, o.raio, o.inicioY, o.fimY)
+            ctx.stroke()
+            ctx.fill()
+            ctx.closePath()
+            // olho 2 do fantasma
+            ctx.beginPath()
+            ctx.strokeStyle = "white"
+            ctx.fillStyle = 'white'
+            ctx.arc(o.x2, o.y, o.raio, o.inicioY, o.fimY)
+            ctx.stroke()
+            ctx.fill()
+            ctx.closePath()
+        }
+        
+        //Bolas dos olhos do fantasmas
+        function drawBolaDoOlho(b){
 
+            //bola do olho 1
+            ctx.beginPath()
+            ctx.strokeStyle = "blue"
+            ctx.fillStyle = 'blue'
+            ctx.arc(b.x1, b.y, b.raio, b.inicioY, b.fimY)
+            ctx.stroke()
+            ctx.fill()
+            ctx.closePath()
+            //bola do olho 2
+            ctx.beginPath()
+            ctx.strokeStyle = "blue"
+            ctx.fillStyle = 'blue'
+            ctx.arc(b.x2, b.y, b.raio, b.inicioY, b.fimY)
+            ctx.stroke()
+            ctx.fill()
+            ctx.closePath()
+
+        }
+
+       
+
+        setInterval(() => {
+            //corpo
+            pacman.x += 3
+            pacman.centroX += 3
+            pacman.closeBocaX +=3
+
+            //olho
+            olhoPacMan.x += 3
+
+            //tiros
+            tiros.x1 += 3
+            tiros.x2 += 3
+
+            drawPacman(pacman)
+            drawOlhoPacMan(olhoPacMan)
+            drawTirosPacMan(tiros)
+
+        }, 100);
+
+        setInterval(() => {
+
+            //corpo
+            fantasma.x += 3
+            fantasma.line1X += 3
+            fantasma.line2X += 3
+            fantasma.line3X += 3
+            fantasma.line4X += 3
+            fantasma.line5X += 3
+            fantasma.line6X += 3
+            fantasma.line7X += 3
+            olhoFantasma.x1 += 3
+            olhoFantasma.x2 += 3
+            bolaDoOlho.x1+= 3
+            bolaDoOlho.x2+= 3
+
+            drawFantasma(fantasma)
+            drawOlhoFantasma(olhoFantasma)
+            drawBolaDoOlho(bolaDoOlho)
+
+
+        }, 100);
     </script>
 </body>
 </html>
