@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tela{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img id="img" src="imagens/post-friends.png" style="display: none;" alt=""> -->
+    <canvas id="tela" width="400" height="200"></canvas>
+
+    <script>
+        let tela = document.getElementById('tela')
+        let ctx = tela.getContext('2d')
+
+        // let img = document.getElementById('img')
+        // ctx.drawImage(img, 20, 20)
+        
+        let img = new Image()
+        img.src = "imagens/post-friends.png"
+
+        img.onload = desenharImg
+
+        function desenharImg(){
+
+            ctx.drawImage(this, 20, 20, img.naturalWidth/2,img.naturalHeight/2)
+            //drawImage(imagem, X, Y, largura, altura)
+            //naturalWidth/2 : largura natural da imagem dividido por 2
+        }
+
+    </script>
+</body>
+</html>
