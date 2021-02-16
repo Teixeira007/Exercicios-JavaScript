@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Primeira linha do P */
+        p::first-line{ 
+            color: red;
+        }
+        /* Primeira letra do H1 */
+        h1::first-letter{
+            color: blue;
+            font-size: 4rem;
+        }
+        li{
+            list-style: none;
+        }
+        /* Antes do elemento li */
+        li::before{
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('/imagens/post-friends.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center ;
+        }
+        /* Depois do elemento li */
+        li::after{
+            content: " Exemplo";
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, vitae. Iure, eligendi voluptatibus, mollitia, iusto error perferendis non accusamus cumque dicta omnis nam accusantium inventore. Quia quisquam inventore ut mollitia?</p>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+
+</body>
+</html>
