@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* sinal > vai estilizar só os h2 filhos da div */
+        div > h2{ 
+            color:green
+        }
+        /* sinal de + vai estilizar só o primeiro p depois da div */
+        div + p{
+            color:red
+        }
+        /* sinal ~ vai estilizar todos os p depois da div */
+        div ~ .par{
+            color: indigo;
+        }
+        /* estilizar com atributo , vai estilizar todos com o atributo width */
+        [width]{
+            color: orange;
+        }
+        /* vai estilizar todos com atributo width = 300 */
+        [width="300"]{
+            color: gray;
+        }
+        /*  ~ vai estilizar todos que tem o nome titulo no atributo title */
+        [title~="titulo"]{
+            color: brown;
+        }
+        /* ^ vai estilizar todos que começa com a letra t no atributo title */
+        [title^="t"]{
+            color: cyan;
+        }
+        /* * vai estilizar todos que tem tu no nome no atributo title */
+        [title*="tu"]{
+            color: darkblue;
+        }
+        /* $ vai estilizar todos que termian com o número 1 no atributo title  */
+        [title$="1"]{
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>titulo 1</h1>
+        <h2 width=300>titulo 2</h2>
+        <h3>titulo 3</h3>
+        <h4>titulo 4</h4>
+        <h5>titutlo 5</h5>
+        <h6 width=500>titulo 6</h6>
+    </div>
+    <p>Paragrafo 1</p>
+    <p class="par">Paragrafo 2</p>
+    <p class="par">Paragrafo 3</p>
+
+    <header>
+        <h1 title="titulo 1">titulo 1</h1>
+        <h2 title="titulo 2">titulo 2</h2>
+        <h3>titulo 3</h3>
+        <h4>titulo 4</h4>
+        <h5 title="text 1"> titutlo 5</h5>
+        <h6 >titulo 6</h6> 
+    </header>
+</body>
+</html>
