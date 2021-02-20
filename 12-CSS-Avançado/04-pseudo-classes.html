@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        li{
+            padding: 5px;
+        }
+        /* estiliza apenas onde está focado neste caso clicado */
+        input:focus{
+            color: red;
+        }
+        /* estiliza apenas o elemento li que é o primeiro filho */
+        li:first-child{
+            color: blue;
+        }
+        /* estiliza apenas o primeiro elemento deste tipo no caso li */
+        li:first-of-type{
+            color:turquoise;
+        }
+        /* estiliza o 3 elemento filho do elemento pai neste caso o ul */
+        li:nth-child(3){
+            color: orange;
+        }
+        /* estiliza o 3 elemento deste tipo neste caso li */
+        li:nth-of-type(3){
+            color: gray;
+        }
+        /* estiliza os elementos do mesmo tipo de 3 em 3 começando pelo 3°*/
+        li:nth-of-type(3n){
+            color: red;
+        }
+        /* estiliza os elementos do mesmo tipo de 3 em 3 começando do 1° */
+        li:nth-of-type(3n -2){
+            color:purple;
+        }
+        /* estiliza apenas os elementos deste tipo ímpar */
+        li:nth-of-type(even){
+            background-color:burlywood;
+            color: black;
+        }
+        /* estiliza apenas os elementos deste tipo pares */
+        li:nth-of-type(odd){
+            background-color: gray;
+            color: #fff;
+        } 
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <ul>
+        <h1>Lista</h1>
+        <li>Item 0</li>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+    </ul>
+</body>
+</html>
