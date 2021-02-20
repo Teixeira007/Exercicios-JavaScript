@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+            height: 100px;
+            display: block;
+            padding: 30px;
+        }
+        img:nth-of-type(1){
+            /* rotate- rotacionar passando como paramentro o angulo */
+            transform: rotate(15deg);
+        }
+        img:nth-of-type(2){
+            /* scale - escala do elemento podendo dobrar o tamanho assim adiante (horinzontal, vertical)*/
+            transform: scale(0.5);
+        }
+        img:nth-of-type(3){
+            /* skew - inclina um elemento no plano 2d */
+            transform: skew(30deg);
+        }
+    </style>
+</head>
+<body>
+    <h2>Rotate - 15 graus</h2>
+    <img src="../imagens/post-friends.png" alt="">
+    <h2>Scale 0.5</h2>
+    <img src="../imagens/post-friends.png" alt="">
+    <h2>Skew - 30 graus</h2>
+    <img src="../imagens/post-friends.png" alt="">
+
+</body>
+</html>
