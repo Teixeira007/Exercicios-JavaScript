@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: gray;
+            height: 400px;
+            /* display flex deixa os items flexivel ao elemento pai */
+            display: flex;
+            /* flex-direction: define a direção dos items filhos - row, column, row-reverse, colomn-reverse */
+            flex-direction: row;
+            /* flex-wrap: define se os items fiquem na msm linha nou não - wrap, nowrap, wrap-reverse*/
+            flex-wrap: wrap;
+
+
+            /* flex-flow: junta o flex-direction com o flex-wrap, ex:
+            flex-flow: row wrap; */
+
+            /* justify-content: alinha os items horinzontalmente */
+            justify-content: space-evenly;
+            /* align-items: alinha os items verticalmente */
+            align-items: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: rgb(245, 6, 6);
+        }
+
+        .box2 {
+            background-color: green;
+        }
+
+        .box3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1 box">1</div>
+        <div class="box2 box">2</div>
+        <div class="box3 box">3</div>
+    </div>
+</body>
+
+</html>
