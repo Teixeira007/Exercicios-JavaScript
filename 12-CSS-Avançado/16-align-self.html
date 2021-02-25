@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 300px;
+            display: flex;
+            background-color: grey;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+        }
+
+        .box01 {
+            background-color: red;
+        }
+
+        .box02 {
+            background-color: green;
+            /* align-self: mudar o posicionamento de apenas 1 elemento e não todos do container */
+            align-self: center;
+        }
+
+        .box03 {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box01 box">1</div>
+        <div class="box02 box">2</div>
+        <div class="box03 box">3</div>
+    </div>
+</body>
+
+</html>
