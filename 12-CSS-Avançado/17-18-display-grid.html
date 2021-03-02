@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container {
+            color: white;
+            display: grid;
+            /* determinando as colunas pela unidade de medida frame */
+            grid-template-columns: 1fr 2fr 1fr;
+            /* determinando as linhas pela unidade de medida frame */
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .r1 {
+            background-color: red;
+        }
+
+        .r2 {
+            background-color: blue;
+        }
+
+        .r3 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ret r1">1</div>
+        <div class="ret r2">2</div>
+        <div class="ret r3">3</div>
+        <div class="ret r1">4</div>
+        <div class="ret r2">5</div>
+        <div class="ret r3">6</div>
+
+    </div>
+</body>
+
+</html>
