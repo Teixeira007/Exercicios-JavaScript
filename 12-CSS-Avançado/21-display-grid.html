@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container {
+            height: 90vh;
+            color: white;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            grid-gap: 10px;
+
+            /* justify-content: posiciona a grid horizontalmente em relação ao container retirando todos os espaços */
+            justify-content: center;
+            /* align-content: posiciona a grid verticalmente em relação ao container  */
+            align-content: stretch;
+        }
+
+        .r1 {
+            background-color: red;
+        }
+
+        .r2 {
+            background-color: blue;
+        }
+
+        .r3 {
+            background-color: green;
+        }
+
+        .ret {
+            width: 100px;
+            /* height: 100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ret r1">1</div>
+        <div class="ret r2">2</div>
+        <div class="ret r3">3</div>
+        <div class="ret r1">4</div>
+        <div class="ret r2">5</div>
+        <div class="ret r3">6</div>
+
+    </div>
+</body>
+
+</html>
