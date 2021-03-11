@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 90vh;
+            color: white;
+            display: grid;
+            grid-template-areas:
+                "a2 a2 a2 a2 a2 a2"
+                "a1 a1 a3 a3 a3 a3"
+                "a1 a1 a5 a4 a4 a4"
+                "a6 a6 a6 a6 a6 a6"
+        }
+
+        .r1 {
+            background-color: red;
+        }
+
+        .r2 {
+            background-color: blue;
+        }
+
+        .r3 {
+            background-color: green;
+        }
+
+        .item1 {
+            grid-area: a1;
+        }
+
+        .item2 {
+            grid-area: a2;
+        }
+
+        .item3 {
+            grid-area: a3;
+        }
+
+        .item4 {
+            grid-area: a4;
+        }
+
+        .item5 {
+            grid-area: a5;
+        }
+
+        .item6 {
+            grid-area: a6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ret r1 item1">1</div>
+        <div class="ret r2 item2">2</div>
+        <div class="ret r3 item3">3</div>
+        <div class="ret r1 item4">4</div>
+        <div class="ret r2 item5">5</div>
+        <div class="ret r3 item6">6</div>
+
+    </div>
+</body>
+
+</html>
